@@ -26,8 +26,8 @@ jobs:
       - name: Archive Release
         uses: thedoctor0/zip-release@master
         with:
-          type: 'zip'
-          path: "yaml-cpp/build/yaml-cpp"
+          type: "zip"
+          directory: "yaml-cpp/build/yaml-cpp"
           filename: "${{ env.mingwTargetZip }}"
           
       - name: Release prebuilt
