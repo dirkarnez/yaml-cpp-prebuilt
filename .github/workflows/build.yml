@@ -15,9 +15,9 @@ jobs:
       - name: git clone yaml-cpp
         run: git clone --branch yaml-cpp-0.7.0 https://github.com/jbeder/yaml-cpp.git
 
-      - name: cmake SFML
+      - name: cmake yaml-cpp
         shell: cmd
-        run: cd SFML && cmake.exe -G"MinGW Makefiles" -DBUILD_SHARED_LIBS=OFF -DYAML_CPP_BUILD_TESTS=OFF -DYAML_CPP_BUILD_TOOLS=OFF -DCMAKE_INSTALL_PREFIX="build/yaml-cpp" -B./build
+        run: cd yaml-cpp && cmake.exe -G"MinGW Makefiles" -DBUILD_SHARED_LIBS=OFF -DYAML_CPP_BUILD_TESTS=OFF -DYAML_CPP_BUILD_TOOLS=OFF -DCMAKE_INSTALL_PREFIX="build/yaml-cpp" -B./build
       
       - name: mingw build 
         shell: cmd
@@ -36,5 +36,3 @@ jobs:
           artifacts: "${{ env.mingwTargetZip }}"
           allowUpdates: true
           token: ${{ secrets.GITHUB_TOKEN }}
-
-          
