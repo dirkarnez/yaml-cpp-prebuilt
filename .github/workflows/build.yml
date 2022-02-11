@@ -27,13 +27,12 @@ jobs:
         uses: thedoctor0/zip-release@master
         with:
           type: "zip"
-          path: "yaml-cpp"
-          directory: "yaml-cpp/build"
+          directory: "yaml-cpp/build/yaml-cpp"
           filename: "${{ env.mingwTargetZip }}"
           
       - name: Release prebuilt
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "yaml-cpp/build/${{ env.mingwTargetZip }}"
+          artifacts: "yaml-cpp/build/yaml-cpp/${{ env.mingwTargetZip }}"
           allowUpdates: true
           token: ${{ secrets.GITHUB_TOKEN }}
